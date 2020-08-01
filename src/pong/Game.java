@@ -29,7 +29,7 @@ public class Game extends Canvas implements Runnable, KeyListener {
 		this.addKeyListener(this);
 		
 		player = new Player(0, HEIGHT/2 - 40/2);
-		enemy = new Enemy(WIDTH - 10, HEIGHT/2 - 40/2);
+		enemy = new Enemy(WIDTH - 5, HEIGHT/2 - 40/2);
 		ball = new Ball(WIDTH/2 - 5/2, HEIGHT/2 - 5/2);
 	}
 	
