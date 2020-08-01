@@ -23,6 +23,12 @@ public class Ball {
 	}
 	
 	public void tick() {
+		if (y + dy*speed + height >= Game.HEIGHT) {
+			dy *= -1;
+		} else if (y + dy*speed < 0) {
+			dy *= -1;
+		}
+		
 		x += dx*speed;
 		y += dy*speed;
 	}
