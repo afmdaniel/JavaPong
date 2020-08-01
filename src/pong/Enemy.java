@@ -17,6 +17,12 @@ public class Enemy {
 	
 	public void tick() {
 		y += (Game.ball.y - y) - height/2;
+		
+		if (y + height > Game.HEIGHT) {
+			y = Game.HEIGHT - height;
+		} else if (y < 0) {
+			y = 0;
+		}
 	}
 	
 	public void render(Graphics g) {
