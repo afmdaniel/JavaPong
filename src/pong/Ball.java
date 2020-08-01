@@ -2,6 +2,7 @@ package pong;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.util.Random;
 
 public class Ball {
@@ -27,6 +28,20 @@ public class Ball {
 			dy *= -1;
 		} else if (y + dy*speed < 0) {
 			dy *= -1;
+		}
+		
+		if (x + width >= Game.WIDTH) {
+			System.out.println("USER GOAL");
+		} else if (x < 0) {
+			System.out.println("COMPUTER GOAL");
+		}
+		
+		Rectangle boundsBall = new Rectangle((int) (x + dx*speed), (int) (y + dy*speed), width, height);
+		Rectangle boundsPlayer = new Rectangle(Game.player.x, Game.player.y, Game.player.width, Game.player.height);
+		Rectangle boundsEnemy = new Rectangle((int) Game.enemy.x,(int) Game.enemy.y, Game.enemy.width, Game.enemy.height);
+		
+		if (boundsBall.intersects(boundsPlayer) || boundsBall.intersects(boundsEnemy)) {
+			dx *= -1;
 		}
 		
 		x += dx*speed;
