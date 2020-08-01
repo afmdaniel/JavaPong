@@ -32,8 +32,12 @@ public class Ball {
 		
 		if (x + width >= Game.WIDTH) {
 			System.out.println("USER GOAL");
+			new Game();
+			return;
 		} else if (x < 0) {
 			System.out.println("COMPUTER GOAL");
+			new Game();
+			return;
 		}
 		
 		Rectangle boundsBall = new Rectangle((int) (x + dx*speed), (int) (y + dy*speed), width, height);
