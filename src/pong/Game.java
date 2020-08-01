@@ -22,7 +22,7 @@ public class Game extends Canvas implements Runnable, KeyListener {
 	
 	public Player player;
 	public Enemy enemy;
-	public Ball ball;
+	public static Ball ball;
 	
 	public Game() {
 		this.setPreferredSize(new Dimension(WIDTH*SCALE, HEIGHT*SCALE));

@@ -16,7 +16,7 @@ public class Enemy {
 	}
 	
 	public void tick() {
-		
+		y += (Game.ball.y - y) - height/2;
 	}
 	
 	public void render(Graphics g) {
