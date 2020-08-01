@@ -5,28 +5,28 @@ import java.awt.Graphics;
 
 public class Player {
 	
-	public boolean right, left;
+	public boolean up, down;
 	
 	public int x, y, width, height;
 	
 	public Player(int x, int y) {
 		this.x = x;
 		this.y = y;
-		this.width = 40;
-		this.height = 10;
+		this.width = 10;
+		this.height = 40;
 	}
 	
 	public void tick() {
-		if (right) {
-			x += 2;
-		} else if (left) {
-			x -= 2;
+		if (up) {
+			y -= 2;
+		} else if (down) {
+			y += 2;
 		}
 		
-		if (x + width > Game.WIDTH) {
-			x = Game.WIDTH - width;
-		} else if (x < 0) {
-			x = 0;
+		if (y + height > Game.HEIGHT) {
+			y = Game.HEIGHT - height;
+		} else if (y < 0) {
+			y = 0;
 		}
 	}
 	

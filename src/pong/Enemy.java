@@ -11,8 +11,8 @@ public class Enemy {
 	public Enemy(int x, int y) {
 		this.x = x;
 		this.y = y;
-		this.width = 40;
-		this.height = 10;
+		this.width = 10;
+		this.height = 40;
 	}
 	
 	public void tick() {

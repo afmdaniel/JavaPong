@@ -28,9 +28,9 @@ public class Game extends Canvas implements Runnable, KeyListener {
 		this.setPreferredSize(new Dimension(WIDTH*SCALE, HEIGHT*SCALE));
 		this.addKeyListener(this);
 		
-		player = new Player(100, HEIGHT - 10);
-		enemy = new Enemy(100, 0);
-		ball = new Ball(WIDTH/2 - 5, HEIGHT/2 - 5);
+		player = new Player(0, HEIGHT/2 - 40/2);
+		enemy = new Enemy(WIDTH - 10, HEIGHT/2 - 40/2);
+		ball = new Ball(WIDTH/2 - 5/2, HEIGHT/2 - 5/2);
 	}
 	
 	public static void main(String[] args) {
@@ -94,19 +94,19 @@ public class Game extends Canvas implements Runnable, KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			player.right = true;
-		} else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-			player.left = true;
+		if (e.getKeyCode() == KeyEvent.VK_UP) {
+			player.up = true;
+		} else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+			player.down = true;
 		}
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			player.right = false;
-		} else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-			player.left = false;
+		if (e.getKeyCode() == KeyEvent.VK_UP) {
+			player.up = false;
+		} else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+			player.down = false;
 		}
 	}
 	
