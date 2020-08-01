@@ -11,7 +11,7 @@ public class Ball {
 	public int width, height;
 	
 	public double dx, dy;
-	public double speed = 2;
+	public double speed = 3;
 	
 	public Ball(int x, int y) {
 		this.x = x;
@@ -19,7 +19,7 @@ public class Ball {
 		this.width = 5;
 		this.height = 5;
 		
-		int angle = new Random().nextInt(359);
+		int angle = new Random().nextInt(240 - 120) + 120;
 		
 		this.dx = Math.cos(Math.toRadians(angle));
 		this.dy = Math.sin(Math.toRadians(angle));
